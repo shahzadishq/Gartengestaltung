@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hof- und Gartengestaltung Deskaj | Calw & Umgebung</title>
+<title>Hof- und Gartengestaltung Deskaj | Calw &amp; Umgebung</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   /* ── Design Tokens ── */
   :root {
@@ -16,25 +16,26 @@
     --green-mid: #6a9f80;
     --white: #ffffff;
     --black: #0a0a0a;
-    --charcoal: #1c1c1c;
+    --charcoal: #1f2421;
+    --steel: #4b4f4d;     /* logo grey */
     --muted: #6b7280;
-    --border: #e2e8e4;
-    --bg-off: #f8faf9;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'Outfit', system-ui, sans-serif;
-    --radius: 4px;
+    --border: #e6ebe8;
+    --bg-off: #f7faf8;
+    --font: 'Montserrat', system-ui, -apple-system, sans-serif;
+    --radius: 6px;
     --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; font-size: 16px; }
-
   body {
-    font-family: var(--sans);
+    font-family: var(--font);
     background: var(--white);
     color: var(--black);
     line-height: 1.6;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -45,115 +46,81 @@
     padding: 0 clamp(1.25rem, 5vw, 3rem);
   }
   .section-tag {
-    font-family: var(--sans);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--green);
-    display: block;
-    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.1rem;
+  }
+  .section-tag::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--green);
   }
   .section-title {
-    font-family: var(--serif);
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
-    font-weight: 300;
-    line-height: 1.1;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
     color: var(--charcoal);
   }
-  .section-title em {
-    font-style: italic;
-    color: var(--green);
-  }
+  .section-title span { color: var(--green); }
   .section-lead {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--muted);
-    line-height: 1.8;
+    line-height: 1.85;
     max-width: 56ch;
+    font-weight: 400;
   }
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.9rem 2rem;
-    font-family: var(--sans);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
+    padding: 0.95rem 2rem;
+    font-family: var(--font);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     border-radius: var(--radius);
     text-decoration: none;
     cursor: pointer;
     border: none;
     transition: var(--transition);
+    text-transform: uppercase;
   }
-  .btn-primary {
-    background: var(--green);
-    color: var(--white);
-  }
-  .btn-primary:hover {
-    background: var(--green-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(66,122,91,0.28);
-  }
-  .btn-outline {
-    background: transparent;
-    color: var(--green);
-    border: 1.5px solid var(--green);
-  }
-  .btn-outline:hover {
-    background: var(--green);
-    color: var(--white);
-    transform: translateY(-2px);
-  }
-  .btn svg { flex-shrink: 0; }
+  .btn-primary { background: var(--green); color: var(--white); box-shadow: 0 4px 14px rgba(66,122,91,0.25); }
+  .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(66,122,91,0.32); }
+  .btn-outline { background: transparent; color: var(--green); border: 2px solid var(--green); }
+  .btn-outline:hover { background: var(--green); color: var(--white); transform: translateY(-2px); }
+  .btn-white { background: var(--white); color: var(--green); }
+  .btn-white:hover { background: rgba(255,255,255,0.92); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
+  .btn-ghost-light { background: rgba(255,255,255,0.12); color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
+  .btn-ghost-light:hover { background: rgba(255,255,255,0.95); color: var(--green); border-color: transparent; transform: translateY(-2px); }
 
   /* ── Navigation ── */
   .nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    transition: box-shadow var(--transition);
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: box-shadow var(--transition), border-color var(--transition);
   }
-  .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 68px;
-  }
-  .nav-logo {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-  }
-  .nav-logo-name {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--charcoal);
-    letter-spacing: 0.01em;
-    line-height: 1.1;
-  }
-  .nav-logo-sub {
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--green);
-    font-weight: 500;
-  }
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2.2rem;
-    list-style: none;
-  }
+  .nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.08); border-bottom-color: var(--border); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { height: 46px; width: auto; display: block; }
+  .nav-links { display: flex; align-items: center; gap: 2.1rem; list-style: none; }
   .nav-links a {
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
     color: var(--charcoal);
     text-decoration: none;
     text-transform: uppercase;
@@ -163,914 +130,416 @@
   .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -3px; left: 0; right: 0;
-    height: 1.5px;
-    background: var(--green);
-    transform: scaleX(0);
-    transform-origin: left;
+    bottom: -4px; left: 0; right: 0;
+    height: 2px; background: var(--green);
+    transform: scaleX(0); transform-origin: left;
     transition: transform var(--transition);
   }
   .nav-links a:hover { color: var(--green); }
   .nav-links a:hover::after { transform: scaleX(1); }
   .nav-phone {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.85rem; font-weight: 700;
+    color: var(--white); background: var(--green);
+    text-decoration: none; padding: 0.65rem 1.2rem;
+    border-radius: var(--radius); transition: var(--transition);
+    white-space: nowrap; box-shadow: 0 4px 14px rgba(66,122,91,0.25);
+  }
+  .nav-phone:hover { background: var(--green-dark); transform: translateY(-2px); }
+  .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; flex-direction: column; gap: 5px; }
+  .nav-mobile-btn span { display: block; width: 26px; height: 2px; background: var(--charcoal); transition: var(--transition); border-radius: 2px; }
+
+  /* ── Hero (full-bleed real photo) ── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--green);
-    text-decoration: none;
-    padding: 0.5rem 1.1rem;
-    border: 1.5px solid var(--green);
-    border-radius: var(--radius);
-    transition: var(--transition);
-    white-space: nowrap;
-  }
-  .nav-phone:hover { background: var(--green); color: var(--white); }
-  .nav-mobile-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.4rem;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .nav-mobile-btn span {
-    display: block;
-    width: 24px;
-    height: 1.5px;
-    background: var(--charcoal);
-    transition: var(--transition);
-  }
-
-  /* ── Hero ── */
-  .hero {
-    min-height: 100svh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 68px;
+    padding-top: 76px;
     overflow: hidden;
   }
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: clamp(3rem, 8vw, 7rem) clamp(1.25rem, 5vw, 3rem) clamp(3rem, 8vw, 7rem) clamp(1.25rem, 8vw, 6rem);
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-bg img { width: 100%; height: 100%; object-fit: cover; animation: zoomIn 2s ease both; }
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(95deg, rgba(15,30,22,0.88) 0%, rgba(31,36,33,0.7) 38%, rgba(31,36,33,0.25) 70%, rgba(31,36,33,0.1) 100%);
   }
+  .hero-inner { position: relative; z-index: 1; width: 100%; padding-top: 3rem; padding-bottom: 4rem; }
   .hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    display: inline-flex; align-items: center; gap: 0.75rem;
     margin-bottom: 1.8rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
     animation: fadeUp 0.8s ease both;
   }
-  .hero-eyebrow-line {
-    width: 32px;
-    height: 1.5px;
-    background: var(--green);
-  }
-  .hero-eyebrow-text {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--green);
-    font-weight: 600;
-  }
+  .hero-eyebrow-text { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; font-weight: 600; }
+  .hero-stars { display: flex; gap: 1px; }
+  .hero-stars span { color: #fbbc04; font-size: 0.8rem; }
   .hero-title {
-    font-family: var(--serif);
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.05;
-    color: var(--charcoal);
-    margin-bottom: 0.3rem;
-    animation: fadeUp 0.8s 0.15s ease both;
+    font-size: clamp(2.6rem, 6.5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: #fff;
+    max-width: 16ch;
+    margin-bottom: 1.4rem;
+    animation: fadeUp 0.8s 0.12s ease both;
   }
-  .hero-title-italic {
-    font-style: italic;
-    color: var(--green);
-    display: block;
-  }
-  .hero-subtitle {
-    font-family: var(--serif);
-    font-size: clamp(1.4rem, 3vw, 2.1rem);
-    font-weight: 300;
-    color: var(--muted);
-    font-style: italic;
-    margin-bottom: 2.2rem;
-    animation: fadeUp 0.8s 0.25s ease both;
-  }
+  .hero-title span { color: var(--green-mid); }
   .hero-body {
-    font-size: 0.98rem;
-    color: var(--muted);
-    line-height: 1.85;
-    max-width: 48ch;
-    margin-bottom: 3rem;
-    animation: fadeUp 0.8s 0.35s ease both;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.8;
+    max-width: 50ch;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    animation: fadeUp 0.8s 0.24s ease both;
   }
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    animation: fadeUp 0.8s 0.45s ease both;
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.8s 0.36s ease both; }
+  .hero-meta {
+    display: flex; gap: 2.5rem; margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    max-width: 540px;
+    animation: fadeUp 0.8s 0.48s ease both;
   }
-  .hero-image {
-    position: relative;
-    overflow: hidden;
-    background: var(--green-light);
-  }
-  .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.92) saturate(1.05);
-    animation: zoomIn 1.6s ease both;
-  }
-  .hero-image-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(66,122,91,0.12) 0%, transparent 60%);
-  }
-  .hero-badge {
-    position: absolute;
-    bottom: 2.5rem;
-    left: -1rem;
-    background: var(--white);
-    border-left: 4px solid var(--green);
-    padding: 1.2rem 1.5rem;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-    animation: slideRight 1s 0.6s ease both;
-  }
-  .hero-badge-number {
-    font-family: var(--serif);
-    font-size: 2.4rem;
-    font-weight: 300;
-    color: var(--green);
-    line-height: 1;
-  }
-  .hero-badge-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 500;
-  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .hero-meta-num { font-size: 2rem; font-weight: 800; color: #fff; line-height: 1; letter-spacing: -0.02em; }
+  .hero-meta-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; }
 
-  /* ── Badges Strip ── */
-  .badges-strip {
-    background: var(--charcoal);
-    padding: 2.8rem 0;
-  }
-  .badges-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-  }
-  .badge-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1.5rem 2rem;
+  /* ── Core Values Strip ── */
+  .values { background: var(--charcoal); }
+  .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .value-item {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 0.9rem;
+    padding: 2.6rem 2rem;
     border-right: 1px solid rgba(255,255,255,0.08);
-    gap: 0.8rem;
+    transition: background var(--transition);
   }
-  .badge-item:last-child { border-right: none; }
-  .badge-icon {
-    width: 44px;
-    height: 44px;
-    background: rgba(66,122,91,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .value-item:last-child { border-right: none; }
+  .value-item:hover { background: rgba(255,255,255,0.03); }
+  .value-icon {
+    width: 46px; height: 46px;
+    background: rgba(66,122,91,0.22);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
     color: var(--green-mid);
   }
-  .badge-title {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 400;
-    color: var(--white);
-  }
-  .badge-desc {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.03em;
-  }
+  .value-title { font-size: 1.02rem; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
+  .value-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; font-weight: 400; }
 
   /* ── About ── */
-  #ueber-uns {
-    padding: clamp(5rem, 10vw, 9rem) 0;
-  }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(3rem, 7vw, 7rem);
-    align-items: center;
-  }
-  .about-images {
-    position: relative;
-    height: 560px;
-  }
+  #ueber-uns { padding: clamp(5rem, 10vw, 9rem) 0; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 7vw, 6rem); align-items: center; }
+  .about-images { position: relative; height: 540px; }
   .about-img-main {
-    position: absolute;
-    top: 0; left: 0;
-    width: 72%;
-    height: 78%;
-    object-fit: cover;
-    border-radius: 2px;
+    position: absolute; top: 0; right: 0;
+    width: 80%; height: 80%;
+    object-fit: cover; border-radius: 10px;
+    box-shadow: var(--shadow-md);
   }
   .about-img-accent {
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 55%;
-    height: 52%;
-    object-fit: cover;
-    border-radius: 2px;
-    border: 6px solid var(--white);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+    position: absolute; bottom: 0; left: 0;
+    width: 52%; height: 46%;
+    object-fit: cover; border-radius: 10px;
+    border: 8px solid var(--white);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.14);
   }
   .about-stamp {
-    position: absolute;
-    top: 52%;
-    left: 18%;
-    width: 80px;
-    height: 80px;
-    background: var(--green);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    text-align: center;
-    transform: translateY(-50%);
-    box-shadow: 0 8px 24px rgba(66,122,91,0.4);
+    position: absolute; top: 1.4rem; left: 1.4rem;
+    background: var(--green); color: #fff;
+    padding: 1rem 1.3rem; border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(66,122,91,0.4);
+    display: flex; flex-direction: column;
   }
-  .about-stamp-num {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1;
-  }
-  .about-stamp-txt {
-    font-size: 0.55rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    opacity: 0.85;
-  }
-  .about-content { display: flex; flex-direction: column; gap: 1.8rem; }
-  .about-content .section-title { margin-bottom: 0; }
-  .about-stat-row {
-    display: flex;
-    gap: 2.5rem;
-    padding: 1.8rem 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
+  .about-stamp-num { font-size: 1.9rem; font-weight: 800; line-height: 1; }
+  .about-stamp-txt { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.9; margin-top: 0.2rem; font-weight: 600; }
+  .about-content { display: flex; flex-direction: column; gap: 1.6rem; }
+  .about-stat-row { display: flex; gap: 2.5rem; padding: 1.6rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .about-stat { display: flex; flex-direction: column; gap: 0.2rem; }
-  .about-stat-num {
-    font-family: var(--serif);
-    font-size: 2.4rem;
-    font-weight: 300;
-    color: var(--green);
-    line-height: 1;
-  }
-  .about-stat-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; }
+  .about-stat-num { font-size: 2.2rem; font-weight: 800; color: var(--green); line-height: 1; letter-spacing: -0.02em; }
+  .about-stat-label { font-size: 0.76rem; color: var(--muted); letter-spacing: 0.04em; font-weight: 500; }
 
   /* ── Services ── */
-  #leistungen {
-    padding: clamp(5rem, 10vw, 9rem) 0;
-    background: var(--bg-off);
-    position: relative;
-    overflow: hidden;
-  }
+  #leistungen { padding: clamp(5rem, 10vw, 9rem) 0; background: var(--bg-off); position: relative; overflow: hidden; }
   #leistungen::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(66,122,91,0.05) 0%, transparent 70%);
+    content: ''; position: absolute; top: -120px; right: -120px;
+    width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(66,122,91,0.06) 0%, transparent 70%);
     pointer-events: none;
   }
-  .services-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 2rem;
-    margin-bottom: clamp(3rem, 6vw, 5rem);
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr;
-    gap: 1.5px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
+  .services-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: clamp(3rem, 6vw, 4.5rem); position: relative; }
+  .services-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 1.5rem; }
   .service-card {
     background: var(--white);
-    padding: clamp(2rem, 4vw, 3.5rem);
-    position: relative;
-    overflow: hidden;
-    cursor: default;
+    padding: clamp(1.8rem, 3vw, 2.6rem);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    position: relative; overflow: hidden;
     transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    display: flex; flex-direction: column; gap: 1.3rem;
   }
-  .service-card:hover { background: var(--charcoal); }
-  .service-card:hover .service-card-title,
-  .service-card:hover .service-card-body,
-  .service-card:hover .service-tag { color: var(--white); }
-  .service-card:hover .service-card-body { color: rgba(255,255,255,0.65); }
-  .service-card:hover .service-tag { color: var(--green-mid); }
-  .service-card:hover .service-icon { background: rgba(66,122,91,0.25); color: var(--green-mid); }
-  .service-card:hover .service-link { color: var(--green-mid); }
-  .service-card:hover .service-list li { color: rgba(255,255,255,0.7); }
-  .service-card:hover .service-list li::before { background: var(--green-mid); }
-  .service-card-featured { background: var(--green); }
-  .service-card-featured:hover { background: var(--green-dark); }
-  .service-card-featured .service-tag { color: rgba(255,255,255,0.65); }
-  .service-card-featured .service-card-title { color: var(--white); }
-  .service-card-featured .service-card-body { color: rgba(255,255,255,0.8); }
-  .service-card-featured .service-icon { background: rgba(255,255,255,0.15); color: var(--white); }
-  .service-card-featured .service-link { color: rgba(255,255,255,0.9); }
-  .service-card-featured .service-list li { color: rgba(255,255,255,0.8); }
-  .service-card-featured .service-list li::before { background: rgba(255,255,255,0.7); }
+  .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: transparent; }
+  .service-card-featured { background: var(--green); border-color: var(--green); }
+  .service-card-featured .service-card-title,
+  .service-card-featured .service-tag { color: #fff; }
+  .service-card-featured .service-card-body { color: rgba(255,255,255,0.85); }
+  .service-card-featured .service-icon { background: rgba(255,255,255,0.16); color: #fff; }
+  .service-card-featured .service-list li { color: rgba(255,255,255,0.88); }
+  .service-card-featured .service-list li svg { color: rgba(255,255,255,0.9); }
+  .service-card-featured .service-link { color: #fff; }
   .service-icon {
-    width: 48px;
-    height: 48px;
+    width: 52px; height: 52px;
     background: var(--green-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--green);
-    transition: var(--transition);
-    flex-shrink: 0;
+    border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--green); flex-shrink: 0;
   }
-  .service-tag {
-    font-size: 0.68rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--green);
-    font-weight: 600;
-    transition: var(--transition);
-  }
-  .service-card-title {
-    font-family: var(--serif);
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
-    font-weight: 300;
-    color: var(--charcoal);
-    line-height: 1.15;
-    transition: var(--transition);
-  }
-  .service-card-body {
-    font-size: 0.92rem;
-    color: var(--muted);
-    line-height: 1.8;
-    transition: var(--transition);
-  }
-  .service-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    flex: 1;
-  }
-  .service-list li {
-    font-size: 0.88rem;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    transition: var(--transition);
-  }
-  .service-list li::before {
-    content: '';
-    flex-shrink: 0;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    transition: var(--transition);
-  }
+  .service-tag { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); font-weight: 700; }
+  .service-card-title { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 800; color: var(--charcoal); line-height: 1.12; letter-spacing: -0.02em; }
+  .service-card-body { font-size: 0.9rem; color: var(--muted); line-height: 1.75; font-weight: 400; }
+  .service-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+  .service-list li { font-size: 0.86rem; color: var(--charcoal); display: flex; align-items: center; gap: 0.6rem; font-weight: 500; }
+  .service-list li svg { color: var(--green); flex-shrink: 0; }
   .service-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--green);
-    text-decoration: none;
-    margin-top: auto;
-    transition: var(--transition);
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--green); text-decoration: none; margin-top: auto;
   }
   .service-link svg { transition: transform var(--transition); }
   .service-link:hover svg { transform: translateX(4px); }
 
   /* ── Depot ── */
-  #depot {
-    padding: clamp(5rem, 10vw, 9rem) 0;
-    background: var(--white);
-  }
-  .depot-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(3rem, 7vw, 7rem);
-    align-items: center;
-  }
-  .depot-image {
-    position: relative;
-    height: 500px;
-    overflow: hidden;
-  }
-  .depot-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  #depot { padding: clamp(5rem, 10vw, 9rem) 0; background: var(--white); }
+  .depot-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(3rem, 7vw, 6rem); align-items: center; }
+  .depot-image { position: relative; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); }
+  .depot-image img { width: 100%; height: 100%; max-height: 560px; object-fit: cover; display: block; }
   .depot-image-label {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
-    background: var(--green);
-    color: var(--white);
-    padding: 0.6rem 1.1rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 600;
+    position: absolute; bottom: 1.2rem; left: 1.2rem;
+    background: var(--green); color: #fff;
+    padding: 0.6rem 1.1rem; border-radius: var(--radius);
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;
   }
-  .depot-content { display: flex; flex-direction: column; gap: 2rem; }
-  .depot-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
-  }
+  .depot-content { display: flex; flex-direction: column; gap: 1.8rem; }
+  .depot-features { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .depot-feature {
-    padding: 1.4rem;
-    background: var(--bg-off);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    transition: var(--transition);
+    padding: 1.3rem; background: var(--bg-off);
+    border: 1px solid var(--border); border-radius: 10px;
+    display: flex; flex-direction: column; gap: 0.5rem; transition: var(--transition);
   }
-  .depot-feature:hover {
-    border-color: var(--green);
-    box-shadow: 0 4px 16px rgba(66,122,91,0.1);
-    transform: translateY(-2px);
+  .depot-feature:hover { border-color: var(--green); box-shadow: 0 6px 20px rgba(66,122,91,0.1); transform: translateY(-3px); }
+  .depot-feature-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--green-light); color: var(--green);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 0.3rem;
   }
-  .depot-feature-icon { color: var(--green); }
-  .depot-feature-title {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--charcoal);
-  }
-  .depot-feature-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+  .depot-feature-title { font-size: 0.92rem; font-weight: 700; color: var(--charcoal); }
+  .depot-feature-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; font-weight: 400; }
 
-  /* ── Project CTA Banner ── */
-  .cta-banner {
-    background: var(--green);
-    padding: clamp(3.5rem, 7vw, 6rem) 0;
-    position: relative;
-    overflow: hidden;
-  }
+  /* ── CTA Banner ── */
+  .cta-banner { background: var(--green); padding: clamp(3.5rem, 7vw, 5.5rem) 0; position: relative; overflow: hidden; }
   .cta-banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
-  .cta-banner-inner {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .cta-banner-text { flex: 1; min-width: 260px; }
-  .cta-banner-title {
-    font-family: var(--serif);
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 0.6rem;
-  }
-  .cta-banner-sub { font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-  .btn-white {
-    background: var(--white);
-    color: var(--green);
-    font-weight: 600;
-  }
-  .btn-white:hover {
-    background: rgba(255,255,255,0.9);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(0,0,0,0.15);
-  }
+  .cta-banner-inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .cta-banner-text { flex: 1; min-width: 280px; }
+  .cta-banner-title { font-size: clamp(1.7rem, 3.5vw, 2.5rem); font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 0.6rem; }
+  .cta-banner-sub { font-size: 0.96rem; color: rgba(255,255,255,0.82); font-weight: 400; }
 
-  /* ── Testimonials ── */
-  #auftraggeber {
-    padding: clamp(5rem, 10vw, 9rem) 0;
-    background: var(--bg-off);
+  /* ── Google Reviews Widget ── */
+  #auftraggeber { padding: clamp(5rem, 10vw, 9rem) 0; background: var(--bg-off); }
+  .greviews { max-width: 1080px; margin: 0 auto; }
+  .greviews-head { text-align: center; margin-bottom: 2.5rem; }
+  .greviews-head .section-tag { justify-content: center; }
+  .greviews-head .section-tag::before { display: none; }
+
+  .gcard {
+    background: #fff; border: 1px solid var(--border); border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05); overflow: hidden;
   }
-  .testimonials-header { margin-bottom: clamp(3rem, 6vw, 5rem); }
-  .stars-row {
-    display: flex;
-    gap: 0.2rem;
-    margin-bottom: 1.2rem;
-  }
-  .star {
-    color: #f59e0b;
-    font-size: 0.9rem;
-  }
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .review-card {
-    background: var(--white);
-    padding: 2rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    transition: var(--transition);
-    position: relative;
-  }
-  .review-card:hover {
-    border-color: var(--green);
-    box-shadow: 0 8px 32px rgba(66,122,91,0.1);
-    transform: translateY(-3px);
-  }
-  .review-card-featured {
-    grid-column: span 1;
-    background: var(--charcoal);
-    border-color: var(--charcoal);
-  }
-  .review-card-featured:hover {
-    border-color: var(--green);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-  }
-  .review-quote-mark {
-    font-family: var(--serif);
-    font-size: 5rem;
-    line-height: 0.5;
-    color: var(--green-light);
-    font-style: italic;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-  .review-card-featured .review-quote-mark { color: rgba(66,122,91,0.25); }
-  .review-text {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.8;
-    flex: 1;
-  }
-  .review-card-featured .review-text { color: rgba(255,255,255,0.7); }
-  .review-author {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-  }
-  .review-card-featured .review-author { border-top-color: rgba(255,255,255,0.1); }
-  .review-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--green-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--green);
-    flex-shrink: 0;
-  }
-  .review-card-featured .review-avatar { background: rgba(66,122,91,0.3); color: var(--green-mid); }
-  .review-author-name {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--charcoal);
-  }
-  .review-card-featured .review-author-name { color: var(--white); }
-  .review-author-date { font-size: 0.75rem; color: var(--muted); }
-  .review-card-featured .review-author-date { color: rgba(255,255,255,0.4); }
-  .review-stars { display: flex; gap: 0.15rem; }
-  .review-stars span { color: #f59e0b; font-size: 0.8rem; }
-  .reviews-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 3rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--border);
+  .gcard-top {
+    display: flex; align-items: center; gap: 1.5rem;
+    padding: 1.8rem clamp(1.5rem, 4vw, 2.5rem);
+    border-bottom: 1px solid var(--border);
     flex-wrap: wrap;
-    text-align: center;
   }
-  .reviews-rating {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
+  .gcard-brand { display: flex; align-items: center; gap: 0.9rem; }
+  .gcard-glogo { width: 44px; height: 44px; flex-shrink: 0; }
+  .gcard-brand-text { display: flex; flex-direction: column; }
+  .gcard-brand-name { font-size: 1.05rem; font-weight: 700; color: var(--charcoal); line-height: 1.2; }
+  .gcard-brand-sub { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+  .gcard-score { display: flex; align-items: center; gap: 1rem; margin-left: auto; }
+  .gcard-rating-num { font-size: 2.4rem; font-weight: 800; color: var(--charcoal); line-height: 1; letter-spacing: -0.02em; }
+  .gcard-rating-meta { display: flex; flex-direction: column; gap: 0.25rem; }
+  .gstars { display: flex; gap: 1px; }
+  .gstars svg { width: 17px; height: 17px; }
+  .gcard-rating-count { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+  .gcard-write {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: #1a73e8; color: #fff;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+    padding: 0.7rem 1.3rem; border-radius: 999px;
+    text-decoration: none; transition: var(--transition); white-space: nowrap;
   }
-  .reviews-rating-num {
-    font-family: var(--serif);
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: var(--charcoal);
-    line-height: 1;
+  .gcard-write:hover { background: #1557b0; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(26,115,232,0.3); }
+
+  .gscroll-wrap { position: relative; }
+  .gscroll {
+    display: flex; gap: 1.2rem;
+    padding: 1.8rem clamp(1.5rem, 4vw, 2.5rem);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
   }
-  .reviews-rating-label { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.06em; }
+  .gscroll::-webkit-scrollbar { display: none; }
+  .greview {
+    flex: 0 0 320px;
+    scroll-snap-align: start;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem;
+    display: flex; flex-direction: column; gap: 0.85rem;
+    transition: var(--transition);
+  }
+  .greview:hover { box-shadow: var(--shadow-md); border-color: #d4ddd8; }
+  .greview-head { display: flex; align-items: center; gap: 0.8rem; }
+  .greview-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.05rem; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .greview-author { flex: 1; min-width: 0; }
+  .greview-name { font-size: 0.92rem; font-weight: 700; color: var(--charcoal); }
+  .greview-date { font-size: 0.76rem; color: var(--muted); font-weight: 400; }
+  .greview-gicon { width: 20px; height: 20px; flex-shrink: 0; }
+  .greview-stars { display: flex; gap: 1px; }
+  .greview-stars svg { width: 15px; height: 15px; }
+  .greview-text { font-size: 0.86rem; color: #444; line-height: 1.65; font-weight: 400; }
+  .greview-text.clamped { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+  .greview-more { font-size: 0.8rem; font-weight: 600; color: #1a73e8; background: none; border: none; cursor: pointer; padding: 0; text-align: left; font-family: var(--font); }
+  .greview-more:hover { text-decoration: underline; }
+
+  .gnav { display: flex; gap: 0.6rem; justify-content: center; padding: 0 0 1.6rem; }
+  .gnav-btn {
+    width: 42px; height: 42px; border-radius: 50%;
+    border: 1.5px solid var(--border); background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: var(--charcoal); transition: var(--transition);
+  }
+  .gnav-btn:hover { border-color: var(--green); color: var(--green); background: var(--green-light); }
 
   /* ── Contact ── */
-  #kontakt {
-    padding: clamp(5rem, 10vw, 9rem) 0;
-    background: var(--white);
+  #kontakt { padding: clamp(5rem, 10vw, 9rem) 0; background: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(3rem, 7vw, 6rem); align-items: start; }
+  .contact-info { display: flex; flex-direction: column; gap: 2.2rem; }
+  .contact-channel { display: flex; align-items: center; gap: 1rem; }
+  .contact-channel-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--green-light); color: var(--green);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: clamp(3rem, 7vw, 7rem);
-    align-items: start;
-  }
-  .contact-info { display: flex; flex-direction: column; gap: 2.5rem; }
-  .contact-channel {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .contact-channel-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 600;
-  }
-  .contact-channel-value {
-    font-family: var(--serif);
-    font-size: 1.45rem;
-    font-weight: 400;
-    color: var(--charcoal);
-    text-decoration: none;
-    transition: color var(--transition);
-  }
+  .contact-channel-label { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .contact-channel-value { font-size: 1.12rem; font-weight: 700; color: var(--charcoal); text-decoration: none; transition: color var(--transition); }
   .contact-channel-value:hover { color: var(--green); }
-  .contact-regions {
-    padding: 1.8rem;
-    background: var(--bg-off);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .contact-regions-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--green);
-  }
-  .regions-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .region-chip {
-    padding: 0.3rem 0.8rem;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 0.78rem;
-    color: var(--charcoal);
-    font-weight: 500;
-  }
-  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .contact-regions { padding: 1.6rem; background: var(--bg-off); border: 1px solid var(--border); border-radius: 12px; display: flex; flex-direction: column; gap: 1rem; }
+  .contact-regions-title { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--green); }
+  .regions-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .region-chip { padding: 0.35rem 0.85rem; background: #fff; border: 1px solid var(--border); border-radius: 999px; font-size: 0.78rem; color: var(--charcoal); font-weight: 600; }
+  .contact-form-wrap { background: var(--bg-off); padding: clamp(2rem, 4vw, 2.8rem); border: 1px solid var(--border); border-radius: 16px; }
+  .contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
   .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
-  .form-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--charcoal);
+  .form-label { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--charcoal); }
+  .form-input, .form-textarea {
+    font-family: var(--font); font-size: 0.92rem; color: var(--charcoal);
+    background: #fff; border: 1.5px solid var(--border); border-radius: 8px;
+    padding: 0.85rem 1.1rem; outline: none; transition: border-color var(--transition), box-shadow var(--transition); width: 100%;
   }
-  .form-input,
-  .form-textarea {
-    font-family: var(--sans);
-    font-size: 0.92rem;
-    color: var(--charcoal);
-    background: var(--bg-off);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    padding: 0.85rem 1.1rem;
-    outline: none;
-    transition: border-color var(--transition), box-shadow var(--transition);
-    width: 100%;
-  }
-  .form-input::placeholder, .form-textarea::placeholder { color: #b0b8b4; }
-  .form-input:focus, .form-textarea:focus {
-    border-color: var(--green);
-    box-shadow: 0 0 0 3px rgba(66,122,91,0.1);
-    background: var(--white);
-  }
-  .form-textarea { min-height: 140px; resize: vertical; }
-  .form-consent {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-  }
-  .form-consent input[type="checkbox"] {
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-    width: 16px;
-    height: 16px;
-    accent-color: var(--green);
-    cursor: pointer;
-  }
-  .form-consent-text { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+  .form-input::placeholder, .form-textarea::placeholder { color: #aab4af; }
+  .form-input:focus, .form-textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(66,122,91,0.12); }
+  .form-textarea { min-height: 130px; resize: vertical; }
+  .form-consent { display: flex; gap: 0.75rem; align-items: flex-start; }
+  .form-consent input[type="checkbox"] { flex-shrink: 0; margin-top: 0.2rem; width: 17px; height: 17px; accent-color: var(--green); cursor: pointer; }
+  .form-consent-text { font-size: 0.78rem; color: var(--muted); line-height: 1.6; font-weight: 400; }
   .form-consent-text a { color: var(--green); }
   .form-submit { align-self: flex-start; }
 
   /* ── Footer ── */
-  footer {
-    background: var(--charcoal);
-    padding: clamp(3rem, 6vw, 5rem) 0 2rem;
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
+  footer { background: var(--charcoal); padding: clamp(3rem, 6vw, 5rem) 0 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .footer-brand { display: flex; flex-direction: column; gap: 1.2rem; }
-  .footer-logo-name {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--white);
-  }
-  .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 28ch; }
-  .footer-col-title {
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 1.2rem;
-  }
+  .footer-logo { background: #fff; padding: 0.8rem 1rem; border-radius: 10px; display: inline-block; width: fit-content; }
+  .footer-logo img { height: 40px; width: auto; display: block; }
+  .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 30ch; font-weight: 400; }
+  .footer-col-title { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.42); margin-bottom: 1.2rem; }
   .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
-  .footer-links a {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    transition: color var(--transition);
-  }
-  .footer-links a:hover { color: var(--white); }
-  .footer-contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.7rem;
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 0.7rem;
-  }
+  .footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color var(--transition); font-weight: 400; }
+  .footer-links a:hover { color: #fff; }
+  .footer-contact-item { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 0.8rem; font-weight: 400; }
   .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; color: var(--green-mid); }
   .footer-contact-item a { color: inherit; text-decoration: none; }
-  .footer-contact-item a:hover { color: var(--white); }
-  .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+  .footer-contact-item a:hover { color: #fff; }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.3); font-weight: 400; }
   .footer-legal { display: flex; gap: 1.5rem; }
-  .footer-legal a {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.4);
-    text-decoration: none;
-    transition: color var(--transition);
-  }
+  .footer-legal a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color var(--transition); font-weight: 400; }
   .footer-legal a:hover { color: rgba(255,255,255,0.75); }
 
   /* ── Animations ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes zoomIn {
-    from { opacity: 0; transform: scale(1.06); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  @keyframes slideRight {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-
-  /* ── Scroll Reveal ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes zoomIn { from { transform: scale(1.08); } to { transform: scale(1); } }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
 
   /* ── Mobile Menu ── */
-  .mobile-menu {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: var(--white);
-    z-index: 99;
-    flex-direction: column;
-    padding: 6rem 2rem 3rem;
-    gap: 0;
-  }
+  .mobile-menu { display: none; position: fixed; inset: 0; background: #fff; z-index: 99; flex-direction: column; padding: 6.5rem 2rem 3rem; }
   .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    display: block;
-    font-family: var(--serif);
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--charcoal);
-    text-decoration: none;
-    padding: 0.9rem 0;
-    border-bottom: 1px solid var(--border);
-    transition: color var(--transition);
-  }
+  .mobile-menu a { display: block; font-size: 1.5rem; font-weight: 700; color: var(--charcoal); text-decoration: none; padding: 1rem 0; border-bottom: 1px solid var(--border); transition: color var(--transition); letter-spacing: -0.01em; }
   .mobile-menu a:hover { color: var(--green); }
-  .mobile-menu-phone {
-    margin-top: 2rem;
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    color: var(--green) !important;
-    font-style: italic;
-    border-bottom: none !important;
-  }
+  .mobile-menu-phone { margin-top: 2rem; color: var(--green) !important; border-bottom: none !important; }
 
   /* ── Responsive ── */
   @media (max-width: 1024px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-content { padding: 5rem 1.5rem 3rem; order: 2; }
-    .hero-image { height: 50vw; min-height: 320px; order: 1; }
-    .hero-badge { left: 1rem; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-images { height: 380px; }
-    .depot-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+    .value-item:nth-child(2) { border-right: none; }
+    .value-item:nth-child(1), .value-item:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .about-grid, .depot-grid, .contact-grid { grid-template-columns: 1fr; }
+    .about-images { height: 420px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .service-card-featured { grid-column: 1 / -1; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
-    .reviews-grid { grid-template-columns: 1fr 1fr; }
   }
-
   @media (max-width: 768px) {
     .nav-links, .nav-phone { display: none; }
     .nav-mobile-btn { display: flex; }
-    .badges-grid { grid-template-columns: 1fr 1fr; }
-    .badge-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .badge-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
-    .badge-item:nth-last-child(-n+2) { border-bottom: none; }
+    .nav-logo img { height: 40px; }
+    .hero-meta { gap: 1.5rem; flex-wrap: wrap; }
     .services-header { flex-direction: column; align-items: flex-start; }
+    .services-grid { grid-template-columns: 1fr; }
     .depot-features { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
-    .reviews-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .about-stat-row { gap: 1.5rem; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .gcard-score { margin-left: 0; }
+    .gcard-write { margin-left: auto; }
   }
-
   @media (max-width: 480px) {
-    .badges-grid { grid-template-columns: 1fr; }
-    .badge-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .badge-item:nth-child(odd) { border-right: none; }
+    .values-grid { grid-template-columns: 1fr; }
+    .value-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .value-item:last-child { border-bottom: none; }
     .hero-actions { flex-direction: column; }
     .hero-actions .btn { width: 100%; justify-content: center; }
+    .greview { flex: 0 0 84vw; }
+    .gcard-top { gap: 1rem; }
+    .gcard-brand { width: 100%; }
   }
 </style>
 </head>
@@ -1081,23 +550,21 @@
   <div class="container">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">
-        <span class="nav-logo-name">Hof- &amp; Gartengestaltung</span>
-        <span class="nav-logo-sub">Deskaj · Calw &amp; Umgebung</span>
+        <img src="assets/logo.jpg" alt="Deskaj Garten-Baustoffe &amp; Gestaltung">
       </a>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#auftraggeber">Referenzen</a></li>
+        <li><a href="#depot">Baustoffe</a></li>
+        <li><a href="#auftraggeber">Bewertungen</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
       <a href="tel:070519340662" class="nav-phone">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
         07051 9340662
       </a>
-      <button class="nav-mobile-btn" id="menuBtn" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-mobile-btn" id="menuBtn" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
@@ -1107,130 +574,108 @@
   <a href="#home" onclick="closeMenu()">Home</a>
   <a href="#ueber-uns" onclick="closeMenu()">Über uns</a>
   <a href="#leistungen" onclick="closeMenu()">Leistungen</a>
-  <a href="#auftraggeber" onclick="closeMenu()">Referenzen</a>
+  <a href="#depot" onclick="closeMenu()">Baustoffe</a>
+  <a href="#auftraggeber" onclick="closeMenu()">Bewertungen</a>
   <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
-  <a href="tel:070519340662" class="mobile-menu-phone">07051 9340662</a>
+  <a href="tel:070519340662" class="mobile-menu-phone" onclick="closeMenu()">07051 9340662</a>
 </div>
 
 <!-- ── Hero ── -->
 <section id="home" class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">
-      <div class="hero-eyebrow-line"></div>
-      <span class="hero-eyebrow-text">Calw &amp; Umgebung · Seit Jahren</span>
-    </div>
-    <h1 class="hero-title">
-      Ihre Wünsche,
-      <span class="hero-title-italic">unsere Ideen.</span>
-    </h1>
-    <p class="hero-subtitle">Hof- und Gartengestaltung Deskaj</p>
-    <p class="hero-body">
-      Ihr zuverlässiges Unternehmen für Gartenbau, Erdarbeiten, Pflasterarbeiten, 
-      Bepflanzung und vieles mehr — privat wie gewerblich, von der Planung bis zur Pflege.
-    </p>
-    <div class="hero-actions">
-      <a href="#kontakt" class="btn btn-primary">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-        Kostenlose Beratung
-      </a>
-      <a href="#leistungen" class="btn btn-outline">
-        Unsere Leistungen
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
+  <div class="hero-bg">
+    <img src="assets/garden.jpg" alt="Professionell gestalteter Garten mit Natursteinmauer und Pflasterweg">
   </div>
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80&fit=crop" alt="Professionelle Gartengestaltung">
-    <div class="hero-image-overlay"></div>
-    <div class="hero-badge">
-      <div class="hero-badge-number">10+</div>
-      <div class="hero-badge-label">Jahre Erfahrung</div>
+  <div class="hero-inner">
+    <div class="container">
+      <div class="hero-eyebrow">
+        <div class="hero-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <span class="hero-eyebrow-text">5,0 auf Google · Calw &amp; Umgebung</span>
+      </div>
+      <h1 class="hero-title">Ihre Wünsche, <span>unsere Ideen.</span></h1>
+      <p class="hero-body">
+        Ihr zuverlässiges Unternehmen für Gartenbau, Erdarbeiten, Pflasterarbeiten und Bepflanzung —
+        privat wie gewerblich. Von der ehrlichen Beratung über die Planung bis zur routinierten Pflege.
+      </p>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          Kostenlose Beratung
+        </a>
+        <a href="#leistungen" class="btn btn-ghost-light">
+          Unsere Leistungen
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><span class="hero-meta-num">10+</span><span class="hero-meta-label">Jahre Erfahrung</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-num">5,0★</span><span class="hero-meta-label">Google Bewertung</span></div>
+        <div class="hero-meta-item"><span class="hero-meta-num">100%</span><span class="hero-meta-label">Weiterempfehlung</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── Core Values Strip ── -->
-<div class="badges-strip">
+<!-- ── Core Values ── -->
+<div class="values">
   <div class="container">
-    <div class="badges-grid">
-      <div class="badge-item">
-        <div class="badge-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <div class="badge-title">Sorgfältige Planung</div>
-        <div class="badge-desc">Jedes Projekt beginnt mit einer gründlichen Analyse</div>
+    <div class="values-grid">
+      <div class="value-item">
+        <div class="value-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <div class="value-title">Sorgfältige Planung</div>
+        <div class="value-desc">Jedes Projekt beginnt mit gründlicher Analyse vor Ort.</div>
       </div>
-      <div class="badge-item">
-        <div class="badge-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-        </div>
-        <div class="badge-title">Kreative Ideen</div>
-        <div class="badge-desc">Frische Konzepte mit langjähriger Erfahrung</div>
+      <div class="value-item">
+        <div class="value-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+        <div class="value-title">Kreative Ideen</div>
+        <div class="value-desc">Frische Konzepte mit langjähriger Erfahrung.</div>
       </div>
-      <div class="badge-item">
-        <div class="badge-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        </div>
-        <div class="badge-title">Ehrlicher Rat</div>
-        <div class="badge-desc">Transparente Beratung ohne versteckte Kosten</div>
+      <div class="value-item">
+        <div class="value-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+        <div class="value-title">Ehrlicher Rat</div>
+        <div class="value-desc">Transparente Beratung ohne versteckte Kosten.</div>
       </div>
-      <div class="badge-item">
-        <div class="badge-icon">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-        </div>
-        <div class="badge-title">Höchste Qualität</div>
-        <div class="badge-desc">Präzise Ausführung auch bei schwierigen Projekten</div>
+      <div class="value-item">
+        <div class="value-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z"/></svg></div>
+        <div class="value-title">Höchste Qualität</div>
+        <div class="value-desc">Präzise Ausführung auch bei schwierigen Projekten.</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── Über uns ── -->
+<!-- ── About ── -->
 <section id="ueber-uns">
   <div class="container">
     <div class="about-grid">
       <div class="about-images reveal">
-        <img class="about-img-main" 
-          src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80&fit=crop" 
-          alt="Garten Gestaltung">
-        <img class="about-img-accent"
-          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80&fit=crop"
-          alt="Naturstein Mauer">
+        <img class="about-img-main" src="assets/patio.jpg" alt="Fertiggestellte Terrasse mit Pflasterung und Natursteinwand">
+        <img class="about-img-accent" src="assets/garden.jpg" alt="Detail einer gepflegten Gartenanlage">
         <div class="about-stamp">
-          <div class="about-stamp-num">★5</div>
-          <div class="about-stamp-txt">Google<br>Bewertung</div>
+          <span class="about-stamp-num">10+</span>
+          <span class="about-stamp-txt">Jahre<br>Erfahrung</span>
         </div>
       </div>
       <div class="about-content reveal reveal-delay-1">
         <span class="section-tag">Über uns</span>
-        <h2 class="section-title">Gartenbau von <em>Grund auf gut</em></h2>
+        <h2 class="section-title">Gartenbau von <span>Grund auf gut</span></h2>
         <p class="section-lead">
-          Von einer ehrlichen Beratung bis zur routinierten Pflege — wir gehen mit Ihnen 
-          Projekte in Ihrem Garten und rund ums Haus an. Ganz gleich ob klein oder groß, 
-          privat oder öffentlich, ob komplett oder einen Teil.
+          Von einer ehrlichen Beratung bis zur routinierten Pflege — wir gehen mit Ihnen Projekte in
+          Ihrem Garten und rund ums Haus an. Ganz gleich ob klein oder groß, privat oder öffentlich,
+          ob komplett oder einen Teil.
         </p>
         <p class="section-lead">
-          Sie entscheiden, welche Arbeiten Sie gerne selbst erledigen. Dabei schenken wir 
-          den speziellen Gegebenheiten Ihres Projektes besondere Beachtung — frische Ideen, 
-          die von Erfahrung sprechen, sind natürlich inklusive.
+          Sie entscheiden, welche Arbeiten Sie gerne selbst erledigen. Dabei schenken wir den speziellen
+          Gegebenheiten Ihres Projektes besondere Beachtung — frische Ideen, die von Erfahrung sprechen,
+          sind natürlich inklusive.
         </p>
         <div class="about-stat-row">
-          <div class="about-stat">
-            <div class="about-stat-num">100%</div>
-            <div class="about-stat-label">Zufriedenheit</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-num">10+</div>
-            <div class="about-stat-label">Jahre Erfahrung</div>
-          </div>
-          <div class="about-stat">
-            <div class="about-stat-num">5★</div>
-            <div class="about-stat-label">Google Bewertung</div>
-          </div>
+          <div class="about-stat"><span class="about-stat-num">100%</span><span class="about-stat-label">Zufriedenheit</span></div>
+          <div class="about-stat"><span class="about-stat-num">5,0★</span><span class="about-stat-label">Google Bewertung</span></div>
+          <div class="about-stat"><span class="about-stat-num">10+</span><span class="about-stat-label">Jahre aktiv</span></div>
         </div>
         <a href="#kontakt" class="btn btn-primary" style="align-self:flex-start">
           Kostenlose Erstberatung
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
@@ -1243,85 +688,52 @@
     <div class="services-header reveal">
       <div>
         <span class="section-tag">Leistungen</span>
-        <h2 class="section-title">Was wir <em>für Sie</em> tun</h2>
+        <h2 class="section-title">Was wir <span>für Sie</span> tun</h2>
       </div>
       <p class="section-lead" style="max-width:36ch;">
         Unser Service umfasst sämtliche Projektphasen — von der Planung bis zur laufenden Pflege.
       </p>
     </div>
     <div class="services-grid reveal">
-      <!-- Card 1: Featured -->
+      <!-- Featured -->
       <div class="service-card service-card-featured">
         <div class="service-tag">Kernleistung</div>
-        <div class="service-icon">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3 class="service-card-title">Garten&shy;gestaltung</h3>
-        <p class="service-card-body">
-          Sie wollen einen beeindruckenden Garten, der jeden staunen lässt? Wir planen und gestalten 
-          Ihren Garten nach Ihren Vorstellungen — vollständig oder in Teilen.
-        </p>
+        <div class="service-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3 class="service-card-title">Gartengestaltung</h3>
+        <p class="service-card-body">Sie wollen einen beeindruckenden Garten, der jeden staunen lässt? Wir planen und gestalten Ihren Garten nach Ihren Vorstellungen — vollständig oder in Teilen.</p>
         <ul class="service-list">
-          <li>Komplette Neugestaltung</li>
-          <li>Umgestaltung &amp; Renovierung</li>
-          <li>Planung &amp; Design</li>
-          <li>Rollrasenverlegung</li>
-          <li>Bepflanzung &amp; Bäume</li>
-          <li>Bewässerungssysteme</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Komplette Neugestaltung</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Planung &amp; Design</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Rollrasen &amp; Bepflanzung</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Bewässerung &amp; Regenwasser</li>
         </ul>
-        <a href="#kontakt" class="service-link">
-          Beratung anfragen
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <a href="#kontakt" class="service-link">Beratung anfragen<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-
-      <!-- Card 2 -->
+      <!-- Pflege -->
       <div class="service-card">
         <div class="service-tag">Pflege</div>
-        <div class="service-icon">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 class="service-card-title">Garten&shy;pflege</h3>
-        <p class="service-card-body">
-          Regelmäßige oder saisonale Pflege Ihres Gartens oder Ihrer Anlage — 
-          zuverlässig, sauber und termingerecht.
-        </p>
+        <div class="service-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3 class="service-card-title">Gartenpflege</h3>
+        <p class="service-card-body">Regelmäßige oder saisonale Pflege Ihres Gartens — zuverlässig, sauber und termingerecht.</p>
         <ul class="service-list">
-          <li>Baumfällung &amp; Rodung</li>
-          <li>Heckenschnitt</li>
-          <li>Winterdienst</li>
-          <li>Rasenpflege</li>
-          <li>Dachbegrünung</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Baumfällung &amp; Rodung</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Heckenschnitt</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Winterdienst</li>
         </ul>
-        <a href="#kontakt" class="service-link">
-          Anfrage stellen
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <a href="#kontakt" class="service-link">Anfrage stellen<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
-
-      <!-- Card 3 -->
+      <!-- Hof & Terrasse -->
       <div class="service-card">
         <div class="service-tag">Hof &amp; Terrasse</div>
-        <div class="service-icon">
-          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
+        <div class="service-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <h3 class="service-card-title">Hof &amp; Terrasse</h3>
-        <p class="service-card-body">
-          Wir pflastern sauber und schnell, bauen gemütliche Terrassen und errichten 
-          schöne Natursteinmauern und perfekte Palisaden.
-        </p>
+        <p class="service-card-body">Wir pflastern sauber und schnell, bauen Terrassen und errichten Natursteinmauern und Palisaden.</p>
         <ul class="service-list">
-          <li>Pflasterarbeiten</li>
-          <li>Natursteinmauern</li>
-          <li>Palisaden &amp; Stelen</li>
-          <li>Gabionen</li>
-          <li>Treppen &amp; Zugänge</li>
-          <li>Zaunbau</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Pflasterarbeiten</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Natursteinmauern</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Palisaden &amp; Gabionen</li>
         </ul>
-        <a href="#kontakt" class="service-link">
-          Anfrage stellen
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <a href="#kontakt" class="service-link">Anfrage stellen<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1332,49 +744,41 @@
   <div class="container">
     <div class="depot-grid">
       <div class="depot-image reveal">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80&fit=crop" alt="Materialdepot Am Würzbacher Kreuz">
+        <img src="assets/depot.jpg" alt="Materialdepot Deskaj in Oberreichenbach – Ausstellung und Profi-Baumarkt">
         <span class="depot-image-label">Am Würzbacher Kreuz · Oberreichenbach</span>
       </div>
       <div class="depot-content reveal reveal-delay-1">
         <span class="section-tag">Materialdepot</span>
-        <h2 class="section-title">Gartenbaustoffe für <em>Selbermacher &amp; Profis</em></h2>
+        <h2 class="section-title">Gartenbaustoffe für <span>Selbermacher &amp; Profis</span></h2>
         <p class="section-lead">
-          Unser Standort in Oberreichenbach bietet eine riesige Auswahl hochwertiger 
-          Gartenbaustoffe — direkt vor Ort oder auf Wunsch flexibel geliefert.
+          Unser Standort in Oberreichenbach bietet eine riesige Auswahl hochwertiger Gartenbaustoffe —
+          direkt vor Ort einkaufen, sofort mitnehmen oder bequem liefern lassen.
         </p>
         <div class="depot-features">
           <div class="depot-feature">
-            <div class="depot-feature-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            </div>
+            <div class="depot-feature-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
             <div class="depot-feature-title">Große Auswahl</div>
-            <div class="depot-feature-desc">Platten, Pflaster, Mauersteine, Kiese, Splitt, Sand und Sackwaren.</div>
+            <div class="depot-feature-desc">Platten, Pflaster, Mauersteine, Kiese, Splitt, Sand &amp; Sackwaren.</div>
           </div>
           <div class="depot-feature">
-            <div class="depot-feature-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
+            <div class="depot-feature-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
             <div class="depot-feature-title">Sofort-Service</div>
-            <div class="depot-feature-desc">Alle Artikel direkt vor Ort — einkaufen und sofort mitnehmen.</div>
+            <div class="depot-feature-desc">Alle Artikel direkt vor Ort lagernd — ohne lange Wartezeiten.</div>
           </div>
           <div class="depot-feature">
-            <div class="depot-feature-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-            </div>
+            <div class="depot-feature-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
             <div class="depot-feature-title">Flexible Lieferung</div>
-            <div class="depot-feature-desc">Auf Wunsch liefern wir Ihre Ware stressfrei vor Ihre Haustür.</div>
+            <div class="depot-feature-desc">Auf Wunsch liefern wir Ihre Ware stressfrei vor die Haustür.</div>
           </div>
           <div class="depot-feature">
-            <div class="depot-feature-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
+            <div class="depot-feature-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
             <div class="depot-feature-title">Profi-Beratung</div>
-            <div class="depot-feature-desc">Persönliche, ehrliche Beratung durch echte Gartenbau-Experten.</div>
+            <div class="depot-feature-desc">Persönlich, ehrlich, kompetent durch echte Gartenbau-Profis.</div>
           </div>
         </div>
-        <a href="#kontakt" class="btn btn-primary" style="align-self:flex-start">
+        <a href="tel:070519340662" class="btn btn-primary" style="align-self:flex-start">
           Standort kontaktieren
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
@@ -1390,146 +794,58 @@
         <p class="cta-banner-sub">Nach einem Telefonat kommen wir gerne für eine kostenlose Erstberatung zu Ihnen.</p>
       </div>
       <a href="tel:070519340662" class="btn btn-white">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
         07051 9340662
       </a>
     </div>
   </div>
 </div>
 
-<!-- ── Testimonials ── -->
+<!-- ── Google Reviews Widget ── -->
 <section id="auftraggeber">
   <div class="container">
-    <div class="testimonials-header reveal">
-      <span class="section-tag">Kundenstimmen</span>
-      <h2 class="section-title">Das sagen unsere <em>Auftraggeber</em></h2>
-      <div class="stars-row" style="margin-top:1rem;">
-        <span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        <span class="star">★</span><span class="star">★</span>
-        <span style="margin-left:0.5rem;font-size:0.85rem;color:var(--muted);">Alle Bewertungen von Google</span>
+    <div class="greviews reveal">
+      <div class="greviews-head">
+        <span class="section-tag">Kundenstimmen</span>
+        <h2 class="section-title">Das sagen unsere <span>Auftraggeber</span></h2>
       </div>
-    </div>
-    <div class="reviews-grid">
-      <!-- Featured review -->
-      <div class="review-card review-card-featured reveal">
-        <span class="review-quote-mark">"</span>
-        <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="review-text">
-          Armend Deskaj und sein Team haben bei uns absolut hervorragende Arbeit geleistet. 
-          Vom ersten Beratungsgespräch bis zur Abnahme waren wir uneingeschränkt zufrieden. 
-          Armend ist absolut zuverlässig, genau und fachlich top ausgebildet. 
-          Die Baustelle wurde jeden Tag super sauber verlassen.
-        </p>
-        <div class="review-author">
-          <div class="review-avatar">TW</div>
-          <div>
-            <div class="review-author-name">Thomas Wohlrath</div>
-            <div class="review-author-date">vor 1 Jahr · Google</div>
-          </div>
-        </div>
-      </div>
-      <!-- Review 2 -->
-      <div class="review-card reveal reveal-delay-1">
-        <span class="review-quote-mark" style="color:var(--green-light);">"</span>
-        <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="review-text">
-          Wir sind restlos begeistert! Die Kommunikation war von Anfang an erstklassig. 
-          Besonders hervorzuheben ist die riesige Auswahl vor Ort — man findet garantiert 
-          genau das Richtige für den eigenen Garten. Absolut empfehlenswert!
-        </p>
-        <div class="review-author">
-          <div class="review-avatar">DS</div>
-          <div>
-            <div class="review-author-name">Daniel Steininger</div>
-            <div class="review-author-date">vor 9 Monaten · Google</div>
-          </div>
-        </div>
-      </div>
-      <!-- Review 3 -->
-      <div class="review-card reveal reveal-delay-2">
-        <span class="review-quote-mark" style="color:var(--green-light);">"</span>
-        <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="review-text">
-          Herr Amend Deskaj hat sich viel Zeit genommen und gleich das passende Angebot erstellt. 
-          Der Auftrag wurde zeitnah zu unserer vollsten Zufriedenheit abgearbeitet. 
-          Die Abrechnung war sehr transparent und korrekt.
-        </p>
-        <div class="review-author">
-          <div class="review-avatar">TQ</div>
-          <div>
-            <div class="review-author-name">Tom Quintus</div>
-            <div class="review-author-date">vor 9 Monaten · Google</div>
-          </div>
-        </div>
-      </div>
-      <!-- Review 4 -->
-      <div class="review-card reveal">
-        <span class="review-quote-mark" style="color:var(--green-light);">"</span>
-        <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="review-text">
-          Schon beim Erstgespräch überzeugte er durch seine freundliche Art und fachmännische 
-          Beratung. Herr Deskaj gibt ehrliche Einschätzungen und hat tolle Ideen. 
-          Wir sind äußerst zufrieden.
-        </p>
-        <div class="review-author">
-          <div class="review-avatar">AS</div>
-          <div>
-            <div class="review-author-name">Albert Schmidt</div>
-            <div class="review-author-date">vor 3 Jahren · Google</div>
-          </div>
-        </div>
-      </div>
-      <!-- Review 5 -->
-      <div class="review-card reveal reveal-delay-1">
-        <span class="review-quote-mark" style="color:var(--green-light);">"</span>
-        <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="review-text">
-          Alle waren sehr fleißig und haben tolle Qualität abgeliefert. Es gab eine tolle 
-          Beratung, und der geschätzte Termin wurde sogar früher eingehalten — darüber 
-          haben wir uns sehr gefreut!
-        </p>
-        <div class="review-author">
-          <div class="review-avatar">MW</div>
-          <div>
-            <div class="review-author-name">Melanie Wissinger</div>
-            <div class="review-author-date">vor 2 Jahren · Google</div>
-          </div>
-        </div>
-      </div>
-      <!-- Review 6 -->
-      <div class="review-card reveal reveal-delay-2">
-        <span class="review-quote-mark" style="color:var(--green-light);">"</span>
-        <div class="review-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="review-text">
-          Sehr zuverlässig, professionell, transparent und freundlich. Er gibt gute Ratschläge 
-          und ist dabei auf den Preisrahmen sowie die Vorstellungen seiner Kunden bedacht. 
-          Absolut weiter zu empfehlen!
-        </p>
-        <div class="review-author">
-          <div class="review-avatar">SS</div>
-          <div>
-            <div class="review-author-name">Stellar S.</div>
-            <div class="review-author-date">vor 3 Jahren · Google</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="reviews-footer reveal">
-      <div class="reviews-rating">
-        <div class="reviews-rating-num">5.0</div>
-        <div class="stars-row" style="justify-content:center;"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        <div class="reviews-rating-label">Durchschnittliche Bewertung</div>
-      </div>
-      <div style="width:1px;height:60px;background:var(--border);"></div>
-      <div class="reviews-rating">
-        <div class="reviews-rating-num">10+</div>
-        <div class="reviews-rating-label">Bewertungen auf Google</div>
-      </div>
-      <div style="width:1px;height:60px;background:var(--border);"></div>
-      <div class="reviews-rating">
-        <div class="reviews-rating-num">100%</div>
-        <div class="reviews-rating-label">Weiterempfehlungsrate</div>
+      <div class="gcard">
+        <!-- Widget header -->
+        <div class="gcard-top">
+          <div class="gcard-brand">
+            <svg class="gcard-glogo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/>
+              <path fill="#34A853" d="M6.3 14.7l7 5.1C15.2 16.1 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 15.4 2 8 7 6.3 14.7z" opacity="0"/>
+            </svg>
+            <div class="gcard-brand-text">
+              <span class="gcard-brand-name">Hof- &amp; Gartengestaltung Deskaj</span>
+              <span class="gcard-brand-sub">Google Bewertungen</span>
+            </div>
+          </div>
+          <div class="gcard-score">
+            <span class="gcard-rating-num">5,0</span>
+            <div class="gcard-rating-meta">
+              <div class="gstars" id="headStars"></div>
+              <span class="gcard-rating-count">basierend auf 10+ Bewertungen</span>
+            </div>
+          </div>
+          <a class="gcard-write" href="https://www.google.com/search?q=Hof+und+Gartengestaltung+Deskaj" target="_blank" rel="noopener">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Bewertung schreiben
+          </a>
+        </div>
+
+        <!-- Scrollable reviews -->
+        <div class="gscroll-wrap">
+          <div class="gscroll" id="gscroll"></div>
+        </div>
+
+        <!-- Nav arrows -->
+        <div class="gnav">
+          <button class="gnav-btn" id="gPrev" aria-label="Vorherige Bewertung"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="gnav-btn" id="gNext" aria-label="Nächste Bewertung"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
       </div>
     </div>
   </div>
@@ -1542,74 +858,54 @@
       <div class="contact-info reveal">
         <div>
           <span class="section-tag">Kontakt</span>
-          <h2 class="section-title">Ihr Projekt in <em>den besten Händen</em></h2>
+          <h2 class="section-title">Ihr Projekt in <span>besten Händen</span></h2>
           <p class="section-lead" style="margin-top:1.2rem;">
-            Ihr zuverlässiger Landschaftsgärtner für alle Arbeiten rund um Garten, Hof und Haus. 
+            Ihr zuverlässiger Landschaftsgärtner für alle Arbeiten rund um Garten, Hof und Haus.
             Wir melden uns schnell und verbindlich zurück.
           </p>
         </div>
         <div class="contact-channel">
-          <span class="contact-channel-label">Telefon</span>
-          <a href="tel:070519340662" class="contact-channel-value">07051 9340662</a>
+          <div class="contact-channel-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg></div>
+          <div><div class="contact-channel-label">Telefon</div><a href="tel:070519340662" class="contact-channel-value">07051 9340662</a></div>
         </div>
         <div class="contact-channel">
-          <span class="contact-channel-label">E-Mail</span>
-          <a href="mailto:info@hoga-hof-und-garten.de" class="contact-channel-value" style="font-size:1.1rem;">info@hoga-hof-und-garten.de</a>
+          <div class="contact-channel-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="contact-channel-label">E-Mail</div><a href="mailto:info@hoga-hof-und-garten.de" class="contact-channel-value" style="font-size:1rem;">info@hoga-hof-und-garten.de</a></div>
         </div>
         <div class="contact-channel">
-          <span class="contact-channel-label">Adresse</span>
-          <span class="contact-channel-value" style="font-size:1.1rem;cursor:default;">Im Interkom 17 · 75394 Calw-Altburg</span>
+          <div class="contact-channel-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="contact-channel-label">Adresse</div><span class="contact-channel-value" style="font-size:1rem;">Im Interkom 17 · 75394 Calw-Altburg</span></div>
         </div>
         <div class="contact-regions">
           <span class="contact-regions-title">Unser Einzugsgebiet</span>
           <div class="regions-wrap">
-            <span class="region-chip">Calw</span>
-            <span class="region-chip">Nagold</span>
-            <span class="region-chip">Pforzheim</span>
-            <span class="region-chip">Herrenberg</span>
-            <span class="region-chip">Böblingen</span>
-            <span class="region-chip">Sindelfingen</span>
-            <span class="region-chip">Leonberg</span>
-            <span class="region-chip">Deckenpfronn</span>
-            <span class="region-chip">Dagersheim</span>
+            <span class="region-chip">Calw</span><span class="region-chip">Nagold</span><span class="region-chip">Pforzheim</span>
+            <span class="region-chip">Herrenberg</span><span class="region-chip">Böblingen</span><span class="region-chip">Sindelfingen</span>
+            <span class="region-chip">Leonberg</span><span class="region-chip">Deckenpfronn</span><span class="region-chip">Dagersheim</span>
           </div>
         </div>
       </div>
 
       <div class="reveal reveal-delay-1">
-        <div class="contact-form" style="background:var(--bg-off);padding:clamp(2rem,4vw,3rem);border:1px solid var(--border);">
-          <h3 style="font-family:var(--serif);font-size:1.6rem;font-weight:300;color:var(--charcoal);margin-bottom:0.5rem;">Nachricht senden</h3>
-          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem;">Wir antworten schnell und unkompliziert.</p>
-          <div class="form-row">
-            <div class="form-field">
-              <label class="form-label" for="name">Name *</label>
-              <input class="form-input" type="text" id="name" name="name" placeholder="Ihr vollständiger Name">
+        <div class="contact-form-wrap">
+          <h3 style="font-size:1.4rem;font-weight:800;color:var(--charcoal);margin-bottom:0.4rem;letter-spacing:-0.02em;">Nachricht senden</h3>
+          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem;">Wir antworten schnell und unkompliziert. <span style="color:var(--green);">*Pflichtfelder</span></p>
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-field"><label class="form-label" for="name">Name *</label><input class="form-input" type="text" id="name" placeholder="Ihr Name"></div>
+              <div class="form-field"><label class="form-label" for="phone">Telefon</label><input class="form-input" type="tel" id="phone" placeholder="Ihre Telefonnummer"></div>
             </div>
-            <div class="form-field">
-              <label class="form-label" for="phone">Telefon</label>
-              <input class="form-input" type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer">
+            <div class="form-field"><label class="form-label" for="email">E-Mail *</label><input class="form-input" type="email" id="email" placeholder="ihre@email.de"></div>
+            <div class="form-field"><label class="form-label" for="message">Ihre Nachricht</label><textarea class="form-textarea" id="message" placeholder="Beschreiben Sie kurz Ihr Projekt oder Ihre Anfrage…"></textarea></div>
+            <div class="form-consent">
+              <input type="checkbox" id="privacy">
+              <label for="privacy" class="form-consent-text">Ich bin mit der Verarbeitung meiner personenbezogenen Daten einverstanden und damit, dass mich Hof- und Gartengestaltung Deskaj per E-Mail und Telefon kontaktieren darf. Mehr in der <a href="#">Datenschutzerklärung</a>. *</label>
             </div>
+            <button type="button" class="btn btn-primary form-submit" onclick="handleSubmit()">
+              Nachricht absenden
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
           </div>
-          <div class="form-field">
-            <label class="form-label" for="email">E-Mail *</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="ihre@email.de">
-          </div>
-          <div class="form-field">
-            <label class="form-label" for="message">Ihre Nachricht</label>
-            <textarea class="form-textarea" id="message" name="message" placeholder="Beschreiben Sie kurz Ihr Projekt oder Ihre Anfrage…"></textarea>
-          </div>
-          <div class="form-consent">
-            <input type="checkbox" id="privacy" name="privacy">
-            <label for="privacy" class="form-consent-text">
-              Ich bin mit der Verarbeitung meiner personenbezogenen Daten einverstanden und damit, 
-              dass mich Hof- und Gartengestaltung Deskaj per E-Mail und Telefon kontaktieren darf. 
-              Mehr Informationen in der <a href="#">Datenschutzerklärung</a>. *
-            </label>
-          </div>
-          <button type="button" class="btn btn-primary form-submit" onclick="handleSubmit()">
-            Nachricht absenden
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
         </div>
       </div>
     </div>
@@ -1621,8 +917,8 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo-name">Hof- &amp; Gartengestaltung Deskaj</div>
-        <p class="footer-tagline">Gartenbau von Grund auf gut — professionell, kreativ und zuverlässig seit Jahren.</p>
+        <span class="footer-logo"><img src="assets/logo.jpg" alt="Deskaj Garten-Baustoffe &amp; Gestaltung"></span>
+        <p class="footer-tagline">Gartenbau von Grund auf gut — professionell, kreativ und zuverlässig in Calw und Umgebung.</p>
       </div>
       <div>
         <div class="footer-col-title">Navigation</div>
@@ -1630,7 +926,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
           <li><a href="#leistungen">Leistungen</a></li>
-          <li><a href="#auftraggeber">Referenzen</a></li>
+          <li><a href="#depot">Baustoffe</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </div>
@@ -1644,96 +940,113 @@
       </div>
       <div>
         <div class="footer-col-title">Kontakt</div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
-          <a href="tel:070519340662">07051 9340662</a>
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:info@hoga-hof-und-garten.de">info@hoga-hof-und-garten.de</a>
-        </div>
-        <div class="footer-contact-item">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Im Interkom 17<br>75394 Calw-Altburg</span>
-        </div>
+        <div class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg><a href="tel:070519340662">07051 9340662</a></div>
+        <div class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@hoga-hof-und-garten.de">info@hoga-hof-und-garten.de</a></div>
+        <div class="footer-contact-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Im Interkom 17<br>75394 Calw-Altburg</span></div>
       </div>
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">© 2024 Hof- und Gartengestaltung Deskaj. Alle Rechte vorbehalten.</span>
-      <div class="footer-legal">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">Cookies</a>
-      </div>
+      <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Cookies</a></div>
     </div>
   </div>
 </footer>
 
 <script>
+  // ── Reviews data ──
+  const reviews = [
+    { name:"Thomas Wohlrath", date:"vor 1 Jahr", color:"#1a73e8", text:"Armend Deskaj und sein Team haben bei uns im Jahr 2023 absolut hervorragende Arbeit geleistet. Vom ersten Beratungsgespräch bis zur Abnahme der Arbeiten waren wir uneingeschränkt zufrieden. Wir haben die Hofeinfahrt, einen Lichthof, das Eingangspodest und den Rasen machen lassen. Armend ist absolut zuverlässig, genau und fachlich top ausgebildet. Die Baustelle wurde jeden Tag super sauber verlassen. Klare Empfehlung!" },
+    { name:"Daniel Steininger", date:"vor 9 Monaten", color:"#34a853", text:"Wir sind restlos begeistert! Die Kommunikation war von Anfang an erstklassig — egal ob per E-Mail oder Telefon, unsere Anfragen wurden immer schnell und freundlich beantwortet. Auch die Lieferung war schnell. Besonders hervorzuheben ist die riesige Auswahl vor Ort: man findet garantiert genau das Richtige für den eigenen Garten. Absolut empfehlenswert!" },
+    { name:"Tom Quintus", date:"vor 9 Monaten", color:"#ea4335", text:"Herr Amend Deskaj und sein Team können wir nur empfehlen. Tolle Beratung auf der neuen Ausstellungsfläche in Oberreichenbach — er hat sich viel Zeit genommen und gleich das passende Angebot erstellt. Der Auftrag wurde zeitnah zu unserer vollsten Zufriedenheit abgearbeitet. Die Mitarbeiter sind kompetent, freundlich und höflich. Die Abrechnung war transparent und korrekt." },
+    { name:"Melanie Wissinger", date:"vor 2 Jahren", color:"#fbbc04", text:"Wir sind sehr zufrieden mit den Arbeiten von Armend und seinem Team. Alle waren sehr fleißig und haben tolle Qualität abgeliefert. Zusätzlich gab es eine tolle Beratung und Tipps im Voraus und während der Umsetzung. Auch der geschätzte Termin wurde eingehalten — er kam sogar früher, darüber haben wir uns sehr gefreut! Definitiv weiterzuempfehlen." },
+    { name:"Albert Schmidt", date:"vor 3 Jahren", color:"#1a73e8", text:"Schon beim Erstgespräch hat uns der Inhaber durch seine freundliche Art und fachmännische Beratung mit Gespür für die individuellen Gegebenheiten überzeugt. Herr Deskaj gibt ehrliche Einschätzungen, hat tolle Ideen für die Gestaltung von Hof und Garten und macht ein detailliertes Angebot. Die Arbeiten führt er sauber, schnell und zuverlässig durch. Äußerst zufrieden!" },
+    { name:"Dietmar M.", date:"vor 3 Jahren", color:"#34a853", text:"Wir haben schon die eine oder andere Arbeit verrichten lassen — Gartenumgestaltung, Stelen und Gabionen setzen, Terrassenplatten verlegen. Die Arbeiten wurden jedes Mal sehr ordentlich und zum zugesagten Termin ausgeführt. Herr Deskaj bringt sich mit gestalterischen und fachlichen Ratschlägen ein, ist sehr kooperativ und findet die beste Lösung. Unser erster Ansprechpartner!" },
+    { name:"Stellar S.", date:"vor 3 Jahren", color:"#ea4335", text:"Herr Deskaj und sein Team sind sehr zuverlässig, professionell, transparent und freundlich. Es wird schnell und sauber in einem eingespielten Team gearbeitet. Er gibt gute Ratschläge und ist dabei auf den Preisrahmen sowie die Vorstellungen seiner Kunden bedacht. Wir werden ihn definitiv wieder kontaktieren. Absolut weiterzuempfehlen!" },
+    { name:"Liridona Morina", date:"vor 8 Monaten", color:"#fbbc04", text:"Sehr zu empfehlen. Saubere Qualität!" },
+    { name:"Mike Schache", date:"vor 3 Jahren", color:"#1a73e8", text:"Von einer problematischen alten Mauer mit Schieflage hin zu einer neuen L-Stein-Mauer. Gute, saubere Arbeit, wirklich zu empfehlen. Verlässliche Absprache und gute Kommunikation." },
+    { name:"Matthias H.", date:"vor 3 Jahren", color:"#34a853", text:"Sehr guter Gartenbauer, der nicht nur auf unsere Wünsche eingegangen ist, sondern auch gute Ideen und Ratschläge gegeben hat. Die Arbeiten waren ordentlich und sauber. Daher immer gerne wieder und klare 5 Sterne." }
+  ];
+
+  function starSvg(){
+    return '<svg viewBox="0 0 24 24" fill="#fbbc04"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.5 1.6 6.7L12 17.3 5.8 20.6l1.6-6.7L2.2 8.9l6.9-.6z"/></svg>';
+  }
+  function gIcon(){
+    return '<svg class="greview-gicon" viewBox="0 0 48 48"><path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/><path fill="#34A853" d="M6.3 14.7l7 5.1C15.2 16.1 19.2 13 24 13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 15.4 2 8 7 6.3 14.7z"/><path fill="#FBBC05" d="M24 46c5.5 0 10.5-1.8 14.3-5l-6.6-5.4C29.6 37.3 27 38 24 38c-6.1 0-10.6-3.1-12.7-8.4l-7 5.4C6.8 41.5 14.7 46 24 46z"/><path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-1 2.6-2.7 4.7-4.8 6.1l6.6 5.4C41.7 36.4 45 31 45 24c0-1.3-.2-2.7-.5-4z"/></svg>';
+  }
+
+  // head stars
+  document.getElementById('headStars').innerHTML = starSvg().repeat(5).replace(/viewBox="0 0 24 24"/g,'viewBox="0 0 24 24" width="17" height="17"');
+
+  // build review cards
+  const scroll = document.getElementById('gscroll');
+  reviews.forEach(r => {
+    const initials = r.name.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+    const long = r.text.length > 180;
+    const card = document.createElement('div');
+    card.className = 'greview';
+    card.innerHTML = `
+      <div class="greview-head">
+        <div class="greview-avatar" style="background:${r.color}">${initials}</div>
+        <div class="greview-author">
+          <div class="greview-name">${r.name}</div>
+          <div class="greview-date">${r.date}</div>
+        </div>
+        ${gIcon()}
+      </div>
+      <div class="greview-stars">${starSvg().repeat(5)}</div>
+      <p class="greview-text${long?' clamped':''}">${r.text}</p>
+      ${long?'<button class="greview-more">Mehr lesen</button>':''}
+    `;
+    if(long){
+      const btn = card.querySelector('.greview-more');
+      const txt = card.querySelector('.greview-text');
+      btn.addEventListener('click',()=>{
+        txt.classList.toggle('clamped');
+        btn.textContent = txt.classList.contains('clamped')?'Mehr lesen':'Weniger anzeigen';
+      });
+    }
+    scroll.appendChild(card);
+  });
+
+  // scroll nav
+  const step = 340;
+  document.getElementById('gPrev').addEventListener('click',()=>scroll.scrollBy({left:-step,behavior:'smooth'}));
+  document.getElementById('gNext').addEventListener('click',()=>scroll.scrollBy({left:step,behavior:'smooth'}));
+
   // ── Navbar scroll state ──
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-  }, { passive: true });
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
 
   // ── Mobile menu ──
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   let menuOpen = false;
-
   menuBtn.addEventListener('click', () => {
     menuOpen = !menuOpen;
     mobileMenu.classList.toggle('open', menuOpen);
     document.body.style.overflow = menuOpen ? 'hidden' : '';
-    const spans = menuBtn.querySelectorAll('span');
-    if (menuOpen) {
-      spans[0].style.cssText = 'transform:rotate(45deg) translate(5px,4px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.cssText = 'transform:rotate(-45deg) translate(5px,-4px)';
-    } else {
-      spans.forEach(s => s.style.cssText = '');
-    }
+    const s = menuBtn.querySelectorAll('span');
+    if (menuOpen){ s[0].style.cssText='transform:rotate(45deg) translate(5px,5px)'; s[1].style.opacity='0'; s[2].style.cssText='transform:rotate(-45deg) translate(5px,-5px)'; }
+    else s.forEach(x=>x.style.cssText='');
   });
-
-  function closeMenu() {
-    menuOpen = false;
-    mobileMenu.classList.remove('open');
-    document.body.style.overflow = '';
-    menuBtn.querySelectorAll('span').forEach(s => s.style.cssText = '');
-  }
+  function closeMenu(){ menuOpen=false; mobileMenu.classList.remove('open'); document.body.style.overflow=''; menuBtn.querySelectorAll('span').forEach(x=>x.style.cssText=''); }
 
   // ── Scroll reveal ──
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-  revealEls.forEach(el => observer.observe(el));
-
-  // ── Form submit ──
-  function handleSubmit() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const privacy = document.getElementById('privacy').checked;
-
-    if (!name || !email) {
-      alert('Bitte füllen Sie die Pflichtfelder (Name und E-Mail) aus.');
-      return;
-    }
-    if (!privacy) {
-      alert('Bitte stimmen Sie der Datenschutzerklärung zu.');
-      return;
-    }
-
-    const btn = document.querySelector('.form-submit');
-    btn.innerHTML = `<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Vielen Dank!`;
-    btn.style.background = '#2f5a41';
-    btn.disabled = true;
+  // ── Form ──
+  function handleSubmit(){
+    const name=document.getElementById('name').value.trim();
+    const email=document.getElementById('email').value.trim();
+    const privacy=document.getElementById('privacy').checked;
+    if(!name||!email){ alert('Bitte füllen Sie die Pflichtfelder (Name und E-Mail) aus.'); return; }
+    if(!privacy){ alert('Bitte stimmen Sie der Datenschutzerklärung zu.'); return; }
+    const btn=document.querySelector('.form-submit');
+    btn.innerHTML='<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Vielen Dank!';
+    btn.style.background='var(--green-dark)'; btn.disabled=true;
   }
 </script>
 </body>
